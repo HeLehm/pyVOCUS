@@ -7,8 +7,9 @@ class Feature:
     """
     Superclass for Features
     """
-    def __init__(self,img) -> None:
+    def __init__(self) -> None:
         self._conspicous_map = None
+
 
     def get_feature_maps(self) -> list:
         """

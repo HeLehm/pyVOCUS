@@ -5,18 +5,27 @@ import os
 def plot_con_feat(feature):
     plot_imgs(feature.get_feature_maps() + [feature.get_conspicous_map()])
 
-def plot_imgs(imgs,title = ""):
+def plot_imgs(imgs,title = "",save_path=None):
     if not isinstance(imgs,list):
         plt.imshow(imgs, cmap='gray',interpolation='none')
+        if save_path is not None:
+            print("save")
+            plt.savefig(save_path,bbox_inches='tight')
         plt.show()
+        
         return
     fig, axs = plt.subplots(len(imgs))
     fig.suptitle(title) 
     for i,img in enumerate(imgs):
         axs[i].imshow(img, cmap='gray',interpolation='none')
+    if save_path is not None:
+        print("save")
+        plt.savefig(save_path,bbox_inches='tight')
     plt.show()
+    
+    
 
-def load_rgb_img(path):
+def load_img(path):
     #load
     img = cv2.imread(path)
     return img

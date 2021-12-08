@@ -28,7 +28,7 @@ class Intensity(Feature):
         """
         -- img -- cv2 img in bgr mode
         """
-        super().__init__(img) #does nothing so far...
+        super().__init__() #does nothing so far...
         gray_img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
         #on, off
         self._feature_maps = [

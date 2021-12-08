@@ -6,7 +6,7 @@ import math
 
 class Color(Feature):
     def __init__(self, img) -> None:
-        super().__init__(img)
+        super().__init__()
         _channel_b = img[:,:,0]
         _channel_g = img[:,:,1]
         _channel_r = img[:,:,2]

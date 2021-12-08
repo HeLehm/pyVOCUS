@@ -8,7 +8,7 @@ class Orientation(Feature):
     produces O'' O' and O
     """
     def __init__(self, img) -> None:
-        super().__init__(img)
+        super().__init__()
         gray_img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
         self._theta_0 = across_scale_add(create_orientation_feature_maps(gray_img,0))
         self._theta_45 = across_scale_add(create_orientation_feature_maps(gray_img,deg_in_rad(45)))

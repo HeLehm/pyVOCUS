@@ -1,9 +1,9 @@
-from util import load_rgb_img, plot_imgs, get_dot_img_test_path
+from util import load_img, plot_imgs, get_dot_img_test_path
 from vocus.bottom_up.bottom_up_part import bottom_up_part_default
 
 if __name__ == "__main__":
     TEST_PATH = get_dot_img_test_path()
-    img = load_rgb_img(TEST_PATH)
+    img = load_img(TEST_PATH)
     _b =  bottom_up_part_default(img)
 
     for i in range(5):

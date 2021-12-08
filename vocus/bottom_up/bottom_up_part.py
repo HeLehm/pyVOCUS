@@ -5,7 +5,7 @@ from ..features.intensity import Intensity
 from ..features.orientation import Orientation
 
 #helper functions
-from ..helper import uniqueness_weight, get_FAO
+from ..helper import uniqueness_weight, get_FOA
 
 #other libs
 import numpy as np
@@ -28,6 +28,7 @@ class bottom_up_part():
             )
         self._S = None
         self._FOA_S = None
+    
 
     def get_saliency_map(self):
         """
@@ -71,8 +72,8 @@ class bottom_up_part():
         muatates self._FOA_S
         """
         if self._FOA_S is None:
-            self._FOA_S = self._S.copy()
-        msr, self._FOA_S = get_FAO(
+            self._FOA_S = self.get_saliency_map().copy()
+        msr, self._FOA_S = get_FOA(
             self._FOA_S,
             threshold=threshold,
             dilation_kernel=dilation_kernel

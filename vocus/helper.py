@@ -60,7 +60,7 @@ def calculate_msr(saliency_map, threshold = 0.25,**kwargs):
     
     return return_map.astype(np.uint8)
 
-def get_FAO(fao_s, threshold = 0.25, dilation_kernel = (30,30)):
+def get_FOA(fao_s, threshold = 0.25, dilation_kernel = (30,30)):
     """
     Parameters
     -------
